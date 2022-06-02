@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light mb-4">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Top navbar</a>
+    <a class="navbar-brand" routerLink="/">O</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -15,21 +15,25 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">Shopping</a>
         </li>
+        <li ngbDropdown class="nav-item dropdown">
+          <a
+            ngbDropdownToggle
+            class="nav-link dropdown-toggle"
+            id="dropdown10"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            >Username</a
+          >
+          <ul ngbDropdownMenu class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/my/orders">My Orders</a></li>
+            <li><a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a></li>
+            <li><a class="dropdown-item" routerLink="/admin/products">Manage Products</a></li>
+            <li><a class="dropdown-item">Logout</a></li>
+          </ul>
+        </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
