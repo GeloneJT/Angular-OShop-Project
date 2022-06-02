@@ -9,9 +9,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
+import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BsNavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
