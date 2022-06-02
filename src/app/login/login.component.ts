@@ -8,11 +8,11 @@ import firebase from 'firebase/compat/app';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(private afAuth: AngularFireAuth) {}
 
   ngOnInit(): void {}
 
   login() {
-    this.afAuth.signInWithRedirect(new firebase.auth.GithubAuthProvider());
+    this.afAuth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
 }
