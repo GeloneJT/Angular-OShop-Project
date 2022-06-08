@@ -5,7 +5,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { map, Observable, switchMap } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 
@@ -22,8 +22,6 @@ export class AdminAuthGuardService implements CanActivate {
     | UrlTree
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
-    return this.auth.user$
-      .pipe(switchMap((user) => this.userService.get(user.uid).valueChanges()))
-      .pipe(map((appUser) => appUser!.isAdmin));
+    return this.auth.appUser$.pipe(map((appUser) => appUser!.isAdmin));
   }
 }
