@@ -26,10 +26,12 @@
         type="number"
         class="form-control"
         required
+        [min]="0"
       />
     </div>
     <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
-      Price is required.
+      <div *ngIf="price.errors?.['required']">Price is required.</div>
+      <div *ngIf="price.errors?.['min']">Price should be 0 or higher.</div>
     </div>
   </div>
   <div class="form-group">
@@ -64,12 +66,14 @@
       type="text"
       class="form-control"
       required
+      url
     />
     <div
       class="alert alert-danger"
       *ngIf="imageUrl.touched && imageUrl.invalid"
     >
-      Image URL required
+      <div *ngIf="imageUrl.errors?.['required']">Image URL required.</div>
+      <div *ngIf="imageUrl.errors?.['url']">Please enter a valid URL.</div>
     </div>
   </div>
   <button class="btn btn-primary">Save</button>
