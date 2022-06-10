@@ -14,5 +14,10 @@ export class ProductFormComponent implements OnInit {
     this.categories$ = categoryService.getCategories().valueChanges();
   }
 
+  save(product: any) {
+    console.log(product);
+    
+  }
+
   ngOnInit(): void {}
 }
